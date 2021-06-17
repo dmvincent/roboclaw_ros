@@ -5,7 +5,11 @@
     <arg name="baud" default="115200"/>
     <arg name="address" default="128"/>
     <arg name="max_speed" default="1.0"/>
+<<<<<<< HEAD
     <arg name="ticks_per_meter" default="986"/>
+=======
+    <arg name="ticks_per_meter" default="1020"/>
+>>>>>>> 9ceb90786c6142588549c6db9c10dae755b3a5d6
     <arg name="base_width" default="0.399"/>
     <arg name="run_diag" default="true"/>
 
