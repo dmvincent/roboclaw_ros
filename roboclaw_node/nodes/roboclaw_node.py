@@ -177,21 +177,14 @@ class Node:
         roboclaw.ResetEncoders(self.address)
 
         self.MAX_SPEED = float(rospy.get_param("~max_speed", "1"))
-<<<<<<< HEAD
         self.TICKS_PER_METER = float(rospy.get_param("~tick_per_meter", "986"))
-=======
-        self.TICKS_PER_METER = float(rospy.get_param("~tick_per_meter", "1020"))
->>>>>>> 9ceb90786c6142588549c6db9c10dae755b3a5d6
         self.BASE_WIDTH = float(rospy.get_param("~base_width", "0.399"))
 
         self.encodm = EncoderOdom(self.TICKS_PER_METER, self.BASE_WIDTH)
         self.last_set_speed_time = rospy.get_rostime()
 
         rospy.Subscriber("little_rover/mobile_base_controller/cmd_vel", Twist, self.cmd_vel_callback)
-<<<<<<< HEAD
         #rospy.Subscriber("little_rover/mobile_base_controller/cmd_vel_throttle", Twist, self.cmd_vel_callback)
-=======
->>>>>>> 9ceb90786c6142588549c6db9c10dae755b3a5d6
 
 	#rate=rospy.Rate(10.0)
         #rate.sleep()
@@ -248,10 +241,7 @@ class Node:
 	lin_val = twist.linear.x
 	ang_val = -twist.angular.z
 	rospy.logwarn("twist.linear.x: %d", lin_val)
-<<<<<<< HEAD
 	#rospy.logwarn("twist.angular.x: %d", ang_val)
-=======
->>>>>>> 9ceb90786c6142588549c6db9c10dae755b3a5d6
         self.last_set_speed_time = rospy.get_rostime()
 
         if lin_val > self.MAX_SPEED:
@@ -266,15 +256,12 @@ class Node:
         vl_ticks = int(vl * self.TICKS_PER_METER)
 
 	rospy.logwarn("vr_ticks: %d", vr_ticks)
-<<<<<<< HEAD
 	#rospy.logwarn("vr: %d", vr)
 	#rospy.logwarn("linear_x: %d", lin_val)
 	#rospy.logwarn("twist.angular.z: %d", ang_val)
 	#rospy.logwarn("self.BASE_WIDTH: %d", self.BASE_WIDTH)
 	#rospy.logwarn("self.TICKS_PER_METER is: %d", self.TICKS_PER_METER)
         #rospy.logdebug("vr_ticks:%d vl_ticks: %d", vr_ticks, vl_ticks)
-=======
->>>>>>> 9ceb90786c6142588549c6db9c10dae755b3a5d6
 
         try:
             # This is a hack way to keep a poorly tuned PID from making noise at speed 0
